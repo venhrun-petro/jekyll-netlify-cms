@@ -1,0 +1,10 @@
+logo_img: images/logo.svg
+has_nav: true
+
+
+nav:
+  - list: ["Home","#home"]
+  - list: ["Shoppers","#shoppers"]
+  - list: ["Merchants","#merchants"]
+  - list: ["About","#about"]
+  - list: ["Contact","#contact"]

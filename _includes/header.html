@@ -1,0 +1,27 @@
+
+<header class="header">
+    <div class="container">
+        <div class="row">  
+            <div class="navigation">
+                {% assign menu = site.data.header %}
+                {% if menu.logo_img %}
+                <a href="{{ menu.url | default: '/' | relative_url }}">
+                  <img class="logo lazy-img" src="{{ menu.logo_img | relative_url }}" alt="Logo" /> 
+                </a>
+                {% endif %}   
+                {% if menu.nav and menu.has_nav %}
+                  <nav class="nav" id="mainNav">
+                      {% for nav in menu.nav %}
+                          <a class="nav_link" href="{{ nav.list[1] }}">{{ nav.list[0] }}</a>
+                      {% endfor %}
+                  </nav>
+                  <div class="burger clearfix ">
+                      <div class=burger-menu></div>
+                      <div class=burger-menu></div>
+                      <div class=burger-menu></div>
+                  </div>
+                 {% endif %}
+            </div>
+        </div>
+    </div>
+</header>

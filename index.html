@@ -1,0 +1,29 @@
+---
+layout: body
+---
+
+{% assign data = site.data %}
+{% assign h_url = data.home %}
+
+
+{% if h_url.has_home and  h_url.video  %}
+  {% include home.html %}
+{% endif  %}
+
+{% if data.contact.has_contact and  data.contact.contact  %}
+  {% include contact.html id='contact' %}
+{% endif  %}
+
+{% if data.slider.has_slider and  data.slider.slider  %}
+  {% include slider.html  %}
+{% endif  %}
+
+
+
+
+{% if data.contact.has_contact and  data.contact.contact  %}
+  {% include contact.html id='contact_2' %}
+{% endif  %}
+
+
+

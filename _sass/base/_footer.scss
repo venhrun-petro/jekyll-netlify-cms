@@ -1,0 +1,55 @@
+@import 'helpers/variables';
+
+.footer {
+  background-color: $white;
+ &_cont{
+   display: flex;
+   border-top: 2px solid $pink;
+   justify-content: space-between;
+   width: 100%;
+   padding: 40px 0;
+   div{
+     a{
+      font-family: $RobotoCondensed;
+      font-size: 14px;
+      line-height: 18px;
+      font-weight: 300;
+      color: $blue;
+      padding: 0 17.5px;
+     }
+   }
+ }
+ &_text{
+  font-family: $RobotoCondensed;
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 300;
+  color: $background_grey;
+ }
+}
+#prob{
+  display: none;
+}
+
+@media (max-width: 767px) {
+  #prob{
+    display: block;
+  }
+  .footer_cont{
+    flex-wrap: wrap;
+    padding: 20px 0;
+    div{
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      padding: 0 20px;
+      box-sizing: border-box;
+      a{
+        padding: 5px 0;
+      }
+    }
+  }
+  .footer_text{
+    padding: 0 15px 15px 15px;
+  }
+}

@@ -1,0 +1,64 @@
+footer
+
+
+
+/* header-menu  */
+
+
+.fusion-main-menu .sub-menu li:hover{
+	
+}
+.fusion-main-menu .sub-menu li:hover > .sub-menu{
+	opacity: 1;
+}
+.fusion-main-menu .sub-menu li a{
+	width: 220px;
+}
+
+.fusion-dropdown-submenu:hover{
+	width: 720px;
+}
+.fusion-dropdown-submenu:hover > ul.sub-menu{
+	opacity: 1;
+	visibility: visible;
+	z-index: 9999;
+}
+/* .fusion-main-menu li.fusion-active-link>.sub-menu .sub-menu {
+	visibility: visible;
+    opacity: 1;
+} */
+/* header-menu  */
+
+
+
+
+
+
+.fusion-main-menu .sub-menu li .sub-menu{
+	visibility: visible;
+	height: 570px;
+	width: 500px;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+    overflow-y: auto;
+}
+.fusion-main-menu .sub-menu li .sub-menu li{
+	display: flex;
+	width: 50%;
+}
+
+.fusion-main-menu .sub-menu{
+	max-height: 570px;
+	overflow-y: auto;
+	overflow-x: hidden;
+	width: auto;
+}
+
+.fusion-main-menu .sub-menu li.active{
+    width: 720px;
+}
+.fusion-main-menu .sub-menu li.active .sub-menu{
+    opacity: 1;
+    left: 220px;
+}
