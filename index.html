@@ -5,24 +5,24 @@ layout: body
 {% assign data = site.data %}
 {% assign h_url = data.home %}
 
-
 {% if h_url.has_home and  h_url.video  %}
   {% include home.html %}
 {% endif  %}
 
 {% if data.contact.has_contact and  data.contact.contact  %}
-  {% include contact.html id='contact' %}
+  {% include contact.html id='contact' name="name" phone-nunber="phone number"  %}
 {% endif  %}
 
-{% if data.slider.has_slider and  data.slider.slider  %}
-  {% include slider.html  %}
+{% if data.work.has_work and  data.work.work  %}
+  {% include work.html  %}
 {% endif  %}
 
-
-
+{% if data.service.has_service and  data.service.service  %}
+  {% include service.html  %}
+{% endif  %}
 
 {% if data.contact.has_contact and  data.contact.contact  %}
-  {% include contact.html id='contact_2' %}
+  {% include contact.html id='contact_2' name="Your name" phone-nunber="Your Phone number"  %}
 {% endif  %}
 
 

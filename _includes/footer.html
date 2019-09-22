@@ -1,6 +1,96 @@
-footer
+
+<a class="btn-up" href="#">Вверх</a>
 
 
+<script src="{{ site.baseurl }}/assets/js/jquery-3.4.1.min.js"></script>
+<script src="{{ site.baseurl }}/assets/js/slick.min.js"></script>
+<script>
+	$('.slct-2').click(function () {
+		var dropBlock = $(this).parent().find('.drop-2');
+		if (dropBlock.is(':hidden')) {
+			dropBlock.slideDown();
+			$(this).addClass('active');
+			$('.drop-2').find('li').click(function () {
+				var selectResult = $(this).html();
+				$(this).parent().parent().find('input').val(selectResult);
+				$('.slct-2').removeClass('active').html(selectResult);
+				dropBlock.slideUp();
+			});
+		} else {
+			$(this).removeClass('active');
+			dropBlock.slideUp();
+		}
+		return false;
+	});
+	$(document).ready(function(){
+		$('.one-time').slick({
+			dots: true,
+			infinite: true,
+			speed: 300,
+			slidesToShow: 2,
+			adaptiveHeight: true
+		});
+		$('.one-time-2').slick({
+			dots: true,
+			infinite: true,
+			speed: 300,
+			slidesToShow: 2,
+			adaptiveHeight: true
+		});
+	});
+	
+	$(function(){
+		$('.nav .nav_link_scroll').on('click', function(e){
+			e.preventDefault();
+			var selector = $(this).attr('href');
+			var section = $(selector);
+			$('html, body').animate({
+				scrollTop: section.offset().top - 68
+			}, 400);
+		})
+
+		$('.btn-up').on('click', function(e){
+			e.preventDefault();
+			$('html, body').animate({
+				scrollTop: 0
+			}, 400);
+		})
+		scrolling();
+		activeItemMenu();
+
+		$(window).on('scroll', function(e){
+				activeItemMenu();
+				scrolling();
+			});
+		});
+
+		function activeItemMenu(){
+			$(".nav_link_scroll").each(function () {
+				var selector = $(this).attr('href');
+				var section = $(selector);
+
+				var windowTop = $(window).scrollTop();
+				var sectionTop = section.offset().top;
+
+					/*console.log(section.offset());
+					console.log(windowTop);
+					console.log(sectionTop);*/
+
+				if(windowTop>sectionTop-150){
+					$('.nav .nav_link_scroll').removeClass('active').filter(this).addClass('active');
+				};
+			});
+		};
+		function scrolling(){
+			if(scrollY > 100){
+				$('.btn-up').slideDown(400);
+			}
+			else{
+				$('.btn-up').slideUp(400)
+			}
+		};
+
+</script>
 
 /* header-menu  */
 

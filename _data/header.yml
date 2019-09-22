@@ -1,10 +1,21 @@
-logo_img: images/logo.svg
+logo_img:       "./assets/img/Lulleem_logo.svg"
+logo_img_right: "./assets/img/logo-right.svg"
 has_nav: true
 
 
 nav:
-  - list: ["Home","#home"]
-  - list: ["Shoppers","#shoppers"]
-  - list: ["Merchants","#merchants"]
+  - list: ["Services","#services"]
+  - list: ["Amenities","#amenities"]
   - list: ["About","#about"]
-  - list: ["Contact","#contact"]
+  - list: ["A map","#map"]
+
+
+sub-nav:
+  - list: ["./assets/img/facebook-logo.svg","#home"]
+  - list: ["./assets/img/instagram.svg","#home"]
+  - list: ["./assets/img/awaze.svg","#home"]
+
+
+
+
+

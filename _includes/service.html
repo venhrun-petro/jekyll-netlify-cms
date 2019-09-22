@@ -1,0 +1,70 @@
+<section id="service" class="service">
+    {% assign service = data.service %}
+    <img  class="service_img" src="{{ site.baseurl }}{{ service.background | relative_url }}" alt="service img">
+    <div class="service_content">
+        <div class="container">
+            <h2 class="service_content_title">{{ service.title }}</h2>
+            <div class="row">
+                <div class="service_content_header">
+                    {% for service in service.service  %}
+                        <div class="service_content_header_list">
+                            <div class="service_content_header_list_top">
+                                <img class="service_content_header_list_top_img" src="{{ service.img[0] }}" alt="{{ service.img[1] }}">
+                                <h2 class="service_content_header_list_top_title">{{ service.title }}</h2>
+                            </div>
+                            {% for list in service.list  %}
+                                <div class="service_content_header_list_cont">
+                                    <img class="service_content_header_list_img" src="{{ site.baseurl }}{{ list.img[0] }}" alt="{{ list.img[1] }}">
+                                    <div class="service_content_header_list_info">
+                                        {{ list.content | markdownify }}
+                                    </div>
+                                </div>
+                            {%  endfor %}
+                        </div>
+                    {%  endfor %}
+                </div>
+            </div>
+            <h2 id="map" class="service_content_location_title">{{ service.location-title }}</h2>
+        </div>
+        <div class="service_content_maps">
+            <div class="row">
+                <div class="service_content_maps_cont">
+                    <div class="service_content_maps_cont_list">
+                            <img src="{{ site.baseurl }}/assets/img/map_1.jpg" alt="map_1">
+                    </div>
+                    <div class="service_content_maps_cont_list">
+                            <img src="{{ site.baseurl }}/assets/img/map_1.jpg" alt="map_1">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <h2 class="service_content_location_title service_content_resident_title">{{ service.resident-title }}</h2>
+            <div class="service_content_resident">
+                {% for resident in service.resident  %}
+                    <div class="service_content_resident_row">
+                        {{ resident.title }}
+                        {% for list in resident.list  %}
+                            <div class="service_content_resident_column">
+                                {% if  list.img!="false" %}
+                                    <img src="{{ site.baseurl }}{{ list.img[0] }}" alt="{{ list.img[1] }}">
+                                {% endif %}
+                            </div>
+                        {%  endfor %}
+                    </div>
+                {%  endfor %}
+            </div>
+            <h2 class="service_content_location_title service_content_comunity_title">{{ service.comunity-title }}</h2>
+            <div class="service_content_comunity_cont">
+                <video class="service_content_comunity_video" autoplay poster="{{ site.baseurl }}/assets/img/comunity.jpg">
+                        <source src="{{ site.baseurl }}{{h_url.video}}"
+                        type="video/mp4">
+                </video>
+            </div>
+            <h2 class="service_content_location_title service_content_team_title">{{ service.team-title }}</h2>
+            <div class="service_content_team_content">
+                {{ service.team-content |  markdownify }}
+            </div>
+        </div>
+    </div>
+</section>

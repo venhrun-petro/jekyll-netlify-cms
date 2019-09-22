@@ -1,27 +1,56 @@
 
 <header class="header">
     <div class="container">
-        <div class="row">  
             <div class="navigation">
                 {% assign menu = site.data.header %}
                 {% if menu.logo_img %}
-                <a href="{{ menu.url | default: '/' | relative_url }}">
-                  <img class="logo lazy-img" src="{{ menu.logo_img | relative_url }}" alt="Logo" /> 
+                <a class="logo" href="{{ menu.url | default: '/' | relative_url }}">
+                  <img class=" lazy-img" src="{{ site.baseurl }}{{ menu.logo_img | relative_url }}" alt="Logo" /> 
                 </a>
                 {% endif %}   
                 {% if menu.nav and menu.has_nav %}
                   <nav class="nav" id="mainNav">
                       {% for nav in menu.nav %}
-                          <a class="nav_link" href="{{ nav.list[1] }}">{{ nav.list[0] }}</a>
+                          <a class="nav_link nav_link_scroll" href="{{ nav.list[1] }}">{{ nav.list[0] }}</a>
                       {% endfor %}
+                      {% if menu.sub-nav %}
+                        {% for sub-nav in menu.sub-nav %}
+                            <a class="nav_link sub_nav_link" href="{{ sub-nav.list[1] }}"><img src="{{ site.baseurl }}{{ sub-nav.list[0] }}"/></a>
+                        {% endfor %}
+                      {% endif %}
                   </nav>
                   <div class="burger clearfix ">
-                      <div class=burger-menu></div>
-                      <div class=burger-menu></div>
-                      <div class=burger-menu></div>
-                  </div>
-                 {% endif %}
+                    <div class=burger-menu></div>
+                    <div class=burger-menu></div>
+                    <div class=burger-menu></div>
+                </div>
+                <div class="navigation_right-cont">
+                    <a class="fone-number" href="tel:02-9930123"><img src="{{ site.baseurl }}/assets/img/phone_icon.svg" />call us 02-9930123</a>  
+                    <div class="select language">
+                        <img class="select_arrow" src="{{ site.baseurl }}/assets/img/arrow.svg" alt="arrow">
+                        <a href="#" class="slct-2"><img src="{{ site.baseurl }}/assets/img/israel_flag.svg" alt="">HEB</a>
+                        <ul class="drop-2">
+                            <li> 1</li>
+                            <li> 1</li>
+                            <li> 1</li>
+                            <li> 1</li>
+                            <li> 1</li>
+                            <li> 1</li>
+                            <li> 1</li>
+                            <li> 1</li>
+                            <li> 1</li>
+                            <li> 1</li>
+                            <li> 1</li>
+                            <li> 1</li>
+                        </ul>
+                    </div>
+                    <a class="logo logo-right" href="{{ menu.url | default: '/' | relative_url }}">
+                        <img class="lazy-img" src="{{ site.baseurl }}{{ menu.logo_img_right | relative_url }}" alt="Logo right" /> 
+                    </a>
+                </div>
+                {% endif %}
             </div>
-        </div>
     </div>
 </header>
+
+

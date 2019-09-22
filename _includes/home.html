@@ -1,4 +1,6 @@
 <section class="home" id="home">
-    <video src="{% if h_url.my_video  %}{{ site.baseurl }}{{h_url.video}}{% else %}{{h_url.video}}{% endif %}"></video>
-</div>
+    <video class="home_img" controls autoplay poster="{{ site.baseurl }}/assets/img/Video_background.jpg">
+            <source src="{{ site.baseurl }}{{h_url.video}}"
+            type="video/mp4">
+    </video>
 </section>
